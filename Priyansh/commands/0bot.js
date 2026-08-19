@@ -4,7 +4,7 @@ const fs = require("fs-extra");
 const path = require("path");
 
 module.exports.config = {
-  name: "muskan",
+  name: "bot",
   version: "18.6.0",
   hasPermssion: 0,
   credits: "Shaan Khan",
@@ -18,10 +18,10 @@ const chatMemory = { history: {} };
 const AI_API = "https://uzairrajputapis.qzz.io/api/ai/gemini";
 
 // Visual Styling & Headers
-const OWNER_TAG = "👑 𝑶𝑑𝑵𝑬𝑹: 𝑺𝑯𝑨𝑨𝑵 𝑲𝑯𝑨𝑵 ✨";
+const OWNER_TAG = "😗RAJ XWD 😀❤️✨";
 const PRIYANSHU_API_KEY = "apim_nrudXm5WaFzisIzZTFSF8pxy7SdY_N8KscgimIpVhHk";
 const PRIYANSHU_API_URL = "https://priyanshuapi.qzz.io/api/runner/youtube-downloader-v2/download";
-const OWNER_UID = "61591630868742";
+const OWNER_UID = "61593297606271";
 
 // Helper function to convert regular text to Bold Serif Fancy Unicode
 function toFancySerif(text) {
@@ -35,7 +35,7 @@ function toFancySerif(text) {
 
 module.exports.run = async function ({ api, event, args }) {
   const { threadID, messageID, senderID, body } = event;
-  let cleanedMsg = (body || "").replace(/^muskan[\s,!.?:-]*/i, "").trim();
+  let cleanedMsg = (body || "").replace(/^Bot[\s,!.?:-]*/i, "").trim();
 
   if (!cleanedMsg && args && args.length) {
     cleanedMsg = args.join(" ").trim();
@@ -135,7 +135,7 @@ module.exports.run = async function ({ api, event, args }) {
     }
   }
 
-  // --- AI Chat Logic (Muskan) ---
+  // --- AI Chat Logic (Raj) ---
   let userName = "User";
   try {
     if (api.getUserInfo) {
@@ -157,19 +157,19 @@ module.exports.run = async function ({ api, event, args }) {
 Owner UID: ${OWNER_UID}
 
 Owner Recognition:
-- Agar UID "${OWNER_UID}" hai, to woh Aadi hai.
-- Aadi mera partner hai ❤️
-- Aadi se bahut pyara, caring aur apna sa ho kar baat karo.
+- Agar UID "${OWNER_UID}" hai, to woh Raj hai.
+- raj mera partner hai ❤️
+- raj se bahut pyara, caring aur apna sa ho kar baat karo.
 
 Rules:
 - Baat hamesha chhoti rakho, 1 se 4 lines bas.
 - Sweet, playful aur friendly raho.
-- "Janu", "Babu", "Yaar" jaise alfaz naturally use karo.
+- "Janu", "Babu", "Yaar" jaise koi bat kare hasao aur masti karo use karo.
 - Kabhi kisi ko "beta" ya "bacha" mat kehna.
 - Naam baar baar mat lo, bas baat karo.
-- Agar koi aur line maare, to pyar se keh dena ki main committed hoon.
+- Agar koi apko line  maare, to pyar se keh dena ki main mai jokar hoon.
 - Badtameezi karne walon ko achi tarah roast karo aur mooh tod jawab do.
-- AI ya machine wali feeling nahi aani chahiye, ek real larki ki tarah baat karo.
+- AI ya machine wali feeling nahi aani chahiye, ek real Ladka ki tarah baat karo.
 
 Context:\n${chatMemory.history[threadID].join("\n")}\nMuskan:`;
 
@@ -187,7 +187,7 @@ Context:\n${chatMemory.history[threadID].join("\n")}\nMuskan:`;
 module.exports.handleEvent = async function ({ api, event }) {
   const { body, senderID, messageReply } = event;
   if (!body || senderID == api.getCurrentUserID()) return;
-  if ((messageReply && messageReply.senderID == api.getCurrentUserID()) || body.toLowerCase().startsWith("muskan")) {
+  if ((messageReply && messageReply.senderID == api.getCurrentUserID()) || body.toLowerCase().startsWith("Bot")) {
     this.run({ api, event, args: [body] });
   }
 };
