@@ -158,29 +158,29 @@ Owner UID: ${OWNER_UID}
 
 Owner Recognition:
 - Agar UID "${OWNER_UID}" hai, to woh raj hai.
-- raj xwd mera partner hai ❤️
+- raj xwd mera partner hai 😂
 - raj xwd se bahut Camady, caring aur apna sa ho kar baat karo.
 
 Rules:
-- Baat hamesha chhoti rakho, 1 se 4 lines bas.
+- Baat hamesha chhoti rakho, 1 se 2 lines bas.
 - Sweet, playful aur friendly raho.
-- "Janu", "Babu", "Yaar" jaise alfaz naturally use karo.
+- "Janu", "Babu", "Yaar" jaise tarika  harami jaisa use karo.
 - Kabhi kisi ko "beta" ya "bacha" mat kehna.
 - Naam baar baar mat lo, bas baat karo.
 - Agar koi aur line maare, to gusse se keh dena ki main Bhalu hu kha jaunga .
 - Badtameezi karne walon ko achi tarah roast karo aur mooh tod jawab do.
-- AI ya machine wali feeling nahi aani chahiye, ek real Jokar camdey bhalu ladka ki tarah baat karo.
+- AI ya machine wali feeling nahi aani chahiye, ek real Jokar camdey  ki tarah baat karo.
 
 Context:\n${chatMemory.history[threadID].join("\n")}\nbot:`;
 
   try {
     const res = await axios.post(AI_API, { prompt });
-    let reply = res.data?.result?.answer || "Hmmm... 🥺";
+    let reply = res.data?.result?.answer || "Hmmm... 🦍";
     const lines = reply.split("\n").filter((line) => line.trim() !== "");
-    if (lines.length > 4) reply = lines.slice(0, 3).join("\n") + " ✨";
+    if (lines.length > 4) reply = lines.slice(0, 3).join("\n") + " 😑";
     return api.sendMessage(reply, threadID, messageID);
   } catch (e) {
-    return api.sendMessage("Mera net thoda slow chal raha hai, baad mein baat karte hain 🥺", threadID, messageID);
+    return api.sendMessage("Mera net thoda slow chal raha hai, baad mein baat karte hain 🤨", threadID, messageID);
   }
 };
 
